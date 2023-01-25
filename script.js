@@ -47,3 +47,13 @@ do{
 console.log(k);  
 k++;  
 }while (k<=30);  
+
+//while loo example
+var num = 1;
+do{
+    num += 1
+    if(num % 2 == 0)
+    {
+        console.log(num);
+    }
+}while(num<=50)
