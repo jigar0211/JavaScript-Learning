@@ -1,1 +1,1 @@
-console.log('Well-come To my jsvascript learning.')
+console.log('Well-come To my javascript learning.')
