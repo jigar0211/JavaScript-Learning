@@ -10,6 +10,17 @@
     <h2>JS async / await</h2>
     <p id="demo1"></p>
     <h3>code:</h3>
+    <pre>
+        function mydisplay(some)
+        {
+            document.getElementById("demo1").innerHTML = some;
+        }
+        async function myfunction(){ return "Hello" }
+        myfunction().then(
+            function(value) {mydisplay(value);},
+            function(error) {mydisplay(error);}
+        );
+    </pre>
 
     <script src="script.js"></script>
 </body>
