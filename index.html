@@ -78,6 +78,29 @@
             }
         }while(num<=50)
     </pre>
+    <h2>For-In Loop</h2>
+    <p id="demo"></p>
+    <h3>code</h3>
+    <pre>
+        const numbers = [45, 4, 9, 16, 25];
+        let txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("demo").innerHTML = txt;
+        function myFunction(value) {
+        txt += value + ""; 
+        }
+    </pre>
+    <h2>For-Of Loop</h2>
+    <p id="demo1"></p>
+    <h3>code</h3>
+    <pre>
+        let language = "javascript"
+        let text = ""
+        for (let i of language){
+            text += i + ""
+        }
+        document.getElementById("demo1").innerHTML = text;
+    </pre>
     <script src="script.js"></script>
 </body>
 </html>

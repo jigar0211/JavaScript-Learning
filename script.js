@@ -13,7 +13,6 @@ let isprime = true;
 if ( number === 1 ){
     alert("1 is neither prime nor composite number");
 }
-
 else if(number > 1)
 {
     for (let i = 2; i < number; i++){
@@ -30,7 +29,6 @@ else if(number > 1)
         alert(`${number} is not a prime number`);
     }
 }
-
 //while loop 
 console.log("while");
 var j = 17;
