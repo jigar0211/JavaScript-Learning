@@ -21,7 +21,36 @@
             function(error) {mydisplay(error);}
         );
     </pre>
-
+    <h2>JS async / await Example</h2>
+    <h3>code:</h3>
+    <pre>
+        function makereq(location){
+            return new Promise((resolve, reject) => {
+                if(location === 'Google'){
+                    resolve('Google says Hii')
+                }else{
+                    reject('We can only talk to Google')
+                }
+            })
+        }
+        function processreq(response){
+            return new Promise((resolve, reject) =>{
+                console.log('Processing Response')
+                resolve(`Extra Information + ${response}`)
+            })
+        }
+        async function dowork(){
+         try{
+            const response = await makereq('Google')
+            console.log('Response Received')
+            const processedResponse = await processreq(response)
+            console.log(processedResponse)
+         } catch(err) {
+            console.log(err)
+         }
+        }
+        dowork()
+    </pre>
     <script src="script.js"></script>
 </body>
 </html>
