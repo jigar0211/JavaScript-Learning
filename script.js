@@ -55,3 +55,18 @@ do{
         console.log(num);
     }
 }while(num<=50)
+//For-In Loop 
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+function myFunction(value) {
+  txt += value + "<br>"; 
+}
+//For-Of Loop
+let language = "javascript"
+let text = ""
+for (let i of language){
+    text += i + "<br>"
+}
+document.getElementById("demo1").innerHTML = text;
