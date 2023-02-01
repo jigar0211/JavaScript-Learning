@@ -5,38 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
-    <h2>JS Data Types</h2>
-    <p>String Variable : </p><p id="demo1"></p>
-    <p>String Variable with number :</p><p id="demo2"></p>
-    <p>concate values :</p><p id="demo3"></p>
-    <p>Numbers using e+ and e- :</p><p id="demo4"></p>
-
-    <h2>conditions</h2>
-    <p>Set the variable maths</p>
-    <p id="demo5"></p>
-
-    <h2>switch case</h2>
-    <p>it's shows number here, number is 2</p>
+<body style="justify-content: center; font-display: row;">
+    <h1>Module pattern</h1>
+    <h3>code:</h3>
     <pre>
-        //Switch Case
-        let a = 2;
-        switch (a) {
-            case 1:
-                a = 'one';
-                break;
-            case 2:
-                a = 'two';
-                break;
-            default:
-                a = 'not found';
-                break;
-        }
-        document.getElementById("demo6").innerHTML = a;
+        const UIcontroller = (function(){
+            //Privete vars and funcs
+            let text = "change the h1."
+            const textChange = function(){
+              const element = document.querySelector('h1');
+              element.textContent = text;
+            }
+          
+            //Return public funcs and vars
+            return {
+              callTectChange: function(){
+                textChange();
+                console.log(text);
+              }
+            }
+          })();
+          UIcontroller.callTectChange();
     </pre>
-    <p>Ans : </p>
-    <p id="demo6"></p>
-    <script src="script.js"></script>
+    <h1>JavaScript Module System</h1>
+    <button onclick="consoleLog()">Click Here</button>
+    <script src="js/esm/amd/main.js" type="module"></script>
+    <!-- <script src="js/cjs/main.js" type="module"></script> -->
+    <script src="script.js" type="module"></script>
 </body>
 </html>
