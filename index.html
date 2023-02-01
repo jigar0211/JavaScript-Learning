@@ -7,36 +7,49 @@
     <title>javascript</title>
 </head>
 <body>
-    <h2>JS Data Types</h2>
-    <p>String Variable : </p><p id="demo1"></p>
-    <p>String Variable with number :</p><p id="demo2"></p>
-    <p>concate values :</p><p id="demo3"></p>
-    <p>Numbers using e+ and e- :</p><p id="demo4"></p>
-
-    <h2>conditions</h2>
-    <p>Set the variable maths</p>
-    <p id="demo5"></p>
-
-    <h2>switch case</h2>
-    <p>it's shows number here, number is 2</p>
+    <h2>JSON Example</h2>
+    <p id="demo"></p>
+    <h3>code:</h3>
     <pre>
-        //Switch Case
-        let a = 2;
-        switch (a) {
-            case 1:
-                a = 'one';
-                break;
-            case 2:
-                a = 'two';
-                break;
-            default:
-                a = 'not found';
-                break;
-        }
-        document.getElementById("demo6").innerHTML = a;
+        let text = '{"employees":[' +
+        '{"firstName":"Jigar","lastName":"Kalariya" },' +
+        '{"firstName":"Prashant","lastName":"Patel" },' +
+        '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+
+        const obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = 
+        obj.employees[0].lastName+" "+
+        obj.employees[0].firstName;
     </pre>
-    <p>Ans : </p>
-    <p id="demo6"></p>
+    <h2>JSON Example 2</h2>
+    <pre>
+        //Second Example
+        const meJson = `
+        {
+            "name": "Jigar",
+            "age":20,
+            "graduated":true,
+            "favouritecolor":[
+                "Skyblue",
+                "NeavyBlue"
+            ]
+        }`;
+        const me = JSON.parse(meJson);
+        console.log(me);
+        console.log(me.name);
+        console.log(me.age);
+        console.log(me.graduated);
+        console.log(me.favouritecolor);
+    </pre>
+    <h2>JSON Example 3 using stringify</h2>
+    <pre>
+        const car = {
+            make: "Honda",
+            model: "Civik"
+        };
+        const cars = JSON.<u>stringify</u>(car);
+        console.log(cars);
+    </pre>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,38 +1,34 @@
-let x;
-let y = 182e5;
-let z = 182e-5;
-x = "Jigar"
-let fullname = "jigar kalariya02" 
-document.getElementById("demo1").innerHTML = x
-document.getElementById("demo2").innerHTML = fullname;
-//For concate
-document.getElementById("demo3").innerHTML = x +" "+ fullname;
-document.getElementById("demo4").innerHTML = y +"</br>"+ z;
-//else if condition
-var book = "maths";
-if(book == "history"){
-    document.getElementById("demo5").innerHTML = book;
-}
-else if ( book == "chemistry" ){
-    document.getElementById("demo5").innerHTML = book;
-}
-else if ( book == "maths" ){
-    document.getElementById("demo5").innerHTML = book;
-}
-else{
-    document.getElementById("demo5").innerHTML = "Unknown Book";
-}
-//Switch Case
-let a = 2;
-switch (a) {
-    case 1:
-        a = 'one';
-        break;
-    case 2:
-        a = 'two';
-        break;
-    default:
-        a = 'not found';
-        break;
-}
-document.getElementById("demo6").innerHTML = a;
+//FIrst example
+let text =
+  '{"employees":[' +
+  '{"firstName":"Jigar","lastName":"Kalariya" },' +
+  '{"firstName":"Prashant","lastName":"Patel" },' +
+  '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+
+const obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+  obj.employees[0].lastName + " " + obj.employees[0].firstName;
+//Second Example
+const meJson = `
+{
+    "name": "Jigar",
+    "age":20,
+    "graduated":true,
+    "favouritecolor":[
+        "Skyblue",
+        "NeavyBlue"
+    ]
+}`;
+const me = JSON.parse(meJson);
+console.log(me);
+console.log(me.name);
+console.log(me.age);
+console.log(me.graduated);
+console.log(me.favouritecolor);
+//Third Example using JSON.stringify
+const car = {
+    make: "Honda",
+    model: "Civik"
+};
+const cars = JSON.stringify(car);
+console.log(cars);
