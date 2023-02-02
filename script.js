@@ -32,3 +32,32 @@ const car = {
 };
 const cars = JSON.stringify(car);
 console.log(cars);
+//parse a JSON object
+console.log('parse a JSON object Belowed :')
+
+let jsonData = `{ 
+  "name": "Jigar Kalariya",
+  "age": 20,
+  "hobbies": [ "reading", "traveling", "swimming" ],
+  "address": { "city": "Ahmedabad",
+               "state": "Gujarat" }}`;
+
+let user = JSON.parse(jsonData);
+
+console.log("Name: " + user.name);
+console.log("Age: " + user.age);
+console.log("Hobbies: " + user.hobbies);
+console.log("Address: " + user.address.city + ", " + user.address.state);
+//here's an example of how you can convert a JavaScript object to a JSON string
+console.log('example of how you can convert a JavaScript object to a JSON string')
+let detail = {
+  name: "jigar",
+  age: 20,
+  hobbies: ["reading", "traveling", "sweeming"],
+  address: {
+    city:"Ahmedabad",
+    state:"Gujarat"
+  }
+};
+let object = JSON.stringify(detail);
+console.log(object);

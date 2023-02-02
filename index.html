@@ -22,6 +22,7 @@
         obj.employees[0].firstName;
     </pre>
     <h2>JSON Example 2</h2>
+    <h3>code:</h3>
     <pre>
         //Second Example
         const meJson = `
@@ -42,6 +43,7 @@
         console.log(me.favouritecolor);
     </pre>
     <h2>JSON Example 3 using stringify</h2>
+    <h3>code:</h3>
     <pre>
         const car = {
             make: "Honda",
@@ -49,6 +51,38 @@
         };
         const cars = JSON.<u>stringify</u>(car);
         console.log(cars);
+    </pre>
+    <h2>parse a JSON object</h2>
+    <h3>code:</h3>
+    <pre>
+        let jsonData = `{ 
+        "name": "Jigar Kalariya",
+        "age": 20,
+        "hobbies": [ "reading", "traveling", "swimming" ],
+        "address": { "city": "Ahmedabad",
+                    "state": "Gujarat" }}`;
+
+        let user = JSON.parse(jsonData);
+
+        console.log("Name: " + user.name);
+        console.log("Age: " + user.age);
+        console.log("Hobbies: " + user.hobbies);
+        console.log("Address: " + user.address.city + ", " + user.address.state);
+    </pre>
+    <h2>an example of how you can convert a JavaScript object to a JSON string</h2>
+    <h3>code:</h3>
+    <pre>
+        let detail = {
+            name: "jigar",
+            age: 20,
+            hobbies: ["reading", "traveling", "sweeming"],
+            address: {
+              city:"Ahmedabad",
+              state:"Gujarat"
+            }
+          };
+          let object = JSON.stringify(detail);
+          console.log(object);
     </pre>
     <script src="script.js"></script>
 </body>
