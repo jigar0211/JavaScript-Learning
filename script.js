@@ -26,7 +26,7 @@ const demo ={
     greet: function(){
         console.log('hello')
     }
-}
+}  
 demo.greet();
 
 //Arrays
@@ -50,4 +50,6 @@ newdata[2] = "cahnged"; // To change element of array
 //newdata.pop(); // to remove last element
 //newdata.shift(); // to remove first element
 console.log(newdata);
-console.log(newdata.length); // Shoes the length
+console.log(newdata.length); // Shoes the length};
+let object = JSON.stringify(detail);
+console.log(object);
