@@ -1,73 +1,61 @@
-// const grandparent = document.querySelector(".grandparent");
-// const parent = document.querySelector(".parent");
-// const child = document.querySelector(".child");
-
-// grandparent.addEventListener(
-//   "click",
-//   (e) => {
-//     console.log("Grandparent Capture");
-//   },
-//   { capture: true }
-// );
-// grandparent.addEventListener("click", (e) => {
-//   console.log("Grandparent Bubble");
-// });
-// parent.addEventListener(
-//     "click",
-//     (e) => {
-//         e.stopPropagation();
-//       console.log("parent Capture");
-//     },
-//     { capture: true }
-//   );
-// parent.addEventListener("click", () =>{
-//     console.log("Hi")
-// });
-// setTimeout(() => {
-//   parent.addEventListener("click", (e) => {
-//     console.log("parent Bubble");
-//   });
-// }, 2000);
-// child.addEventListener(
-//     "click",
-//     (e) => {
-//       console.log("child Capture");
-//     },
-//     { capture: true }
-//   );
-// child.addEventListener("click", (e) => {
-//   console.log("child Bubble");
-//   //   e.stopPropagation();
-// });
-
-
-const divs = document.querySelectorAll('div')
-// divs.forEach(div => {
-//     div.addEventListener("click", () => {
-//         console.log('Hi')
-//     })
+// let p = new Promise((resolve, reject) =>{
+//     let a = 1 + 1; //if condition is not true then it will print catch message
+//     if(a == 2){
+//         resolve('Success')
+//     } else{
+//         reject('Failed')
+//     }
+// })
+// p.then((message) => {
+//     console.log('This is in the then ' + message)
+// }).catch((message) =>{
+//     console.log('This is in the then ' + message)
 // })
 
-// document.addEventListener("click", "div", e => {
-    // if(e.target.matches("div")){
-        // console.log("Hi")
-    // }
+//Promise Example
+// const userleft = false 
+// const userwatch = true
+// function watchtutorialpromise(){
+//     return new Promise((resolve, reject) => {
+//         if (userleft){
+//             reject({
+//                 name: 'User Left',
+//                 message: ':('
+//             })
+//     }else if(userwatch){
+//         reject({
+//             name:'User Watching Videos',
+//             message: ''
+//         })
+//     }else{
+//         resolve('Thumbs up')
+//     }
+// })
+// }
+
+// watchtutorialpromise().then((message)=>{
+//     console.log('Success: '+ message)
+// }).catch((error)=>{
+//     console.log(error.name + ' ' + error.message)
 // })
 
-addGlobalEventListener("click", "div", e => {
-    // if(e.target.matches("div")){
-        console.log("Hi")
-    // }
+//Promise simple program
+const promiseOne = new Promise((resolve, reject) => {
+    resolve('Promise One Record')
 })
 
-function addGlobalEventListener(type, selector, callback)
-{
-    document.addEventListener(type, e => {
-        if(e.target.matches(selector)) callback(e)
-    })
-}
-const newDiv = document.createElement("div") //new div
-newDiv.style.width = "200px"
-newDiv.style.height = "200px"
-newDiv.style.backgroundColor = "purple"
-document.body.append(newDiv)
+const promiseTwo = new Promise((resolve, reject) =>{
+    resolve('Promise Two Record')
+})
+
+const promiseThree = new Promise((resolve, reject) =>{
+    resolve('Promise Three Record')
+})
+
+Promise.all([
+    promiseOne,
+    promiseTwo,
+    promiseThree
+]).then((message) => {
+    console.log(message)
+})
