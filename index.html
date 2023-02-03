@@ -1,65 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Javascript</title>
-  </head>
-  <body>
-    <p>Arithmetic operations using function</p>
-    <pre></pre>
-    <p id="demo1"></p>
-    <p id="demo2"></p>
-    <p id="demo3"></p>
-    <p id="demo4"></p>
-    <h3>Code</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body style="justify-content: center; font-display: row;">
+    <h1>Module pattern</h1>
+    <h3>code:</h3>
     <pre>
-        function arithmetic(a, b, op)
-        {
-            var str1 = a + op + b;
-            return eval(str1);
-        }
-        document.getElementById("demo1").innerHTML = arithmetic(8, 2, "+");
-        document.getElementById("demo2").innerHTML = arithmetic(8, 2, "-");
-        document.getElementById("demo3").innerHTML = arithmetic(8, 2, "*");
-        document.getElementById("demo4").innerHTML = arithmetic(8, 2, "/");
+        const UIcontroller = (function(){
+            //Privete vars and funcs
+            let text = "change the h1."
+            const textChange = function(){
+              const element = document.querySelector('h1');
+              element.textContent = text;
+            }
+          
+            //Return public funcs and vars
+            return {
+              callTectChange: function(){
+                textChange();
+                console.log(text);
+              }
+            }
+          })();
+          UIcontroller.callTectChange();
     </pre>
-
-    <p>Click the following button to call the function</p>
-    <form>
-      <input type="button" onclick="sayHello()" value="Say Hello" />
-    </form>
-    <h3>Code</h3>
-    <pre>
-        function sayHello()
-        {
-            document.write("Hello There")
-        }
-    </pre>
-    <p>Arrow Function</p>
-    <p id="demo5"></p>
-    <p id="demo6"></p>
-    <h3>Code</h3>
-    <pre>
-        function sayHello() {
-            document.write("Hello There");
-          }
-          //Arrow Function
-          function person() {
-            this.name = "jigar";
-            this.age = 20;
-            this.subfunction = function () {
-               let innerfunc = () => {
-               document.getElementById("demo5").innerHTML = this.name;
-               document.getElementById("demo6").innerHTML = this.age;
-            };
-            innerfunc();
-          };
-        }
-        const j = new person();
-        j.subfunction();          
-    </pre>
-    <script src="script.js"></script>
-  </body>
+    <h1>JavaScript Module System</h1>
+    <button onclick="consoleLog()">Click Here</button>
+    <script src="js/esm/amd/main.js" type="module"></script>
+    <!-- <script src="js/cjs/main.js" type="module"></script> -->
+    <script src="script.js" type="module"></script>
+</body>
 </html>
