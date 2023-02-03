@@ -1,21 +1,14 @@
-//addition number with closer
-function addnumber(firstnumber, secondnumber) {
-  var resultValue = "Result is : ";
-  function add() {
-    return resultValue + (firstnumber + secondnumber);
-  }
-  return add;
-}
-var myfunction = addnumber(20, 80);
-var result = myfunction();
-document.getElementById("demo").innerHTML = result;
+const colorsarr = ["red", "blue", "white"];
+localStorage.setItem('colors', JSON.stringify(colorsarr));
 
-//Click Counter
-var incrementclickcount = (function()
-{
-    var counter = 0;
-    return function()
-    {
-        return ++counter;
-    }
-})();   
+const numberarr = [1,2,3]
+localStorage.setItem('numbers',JSON.stringify(numberarr));
+
+
+const colordata = JSON.parse(localStorage.getItem('colors'));
+console.log(colordata);
+
+const numbersdata = JSON.parse(localStorage.getItem('numbers'));
+console.log(numbersdata);
+// clear local storage
+//localStorage.clear();
