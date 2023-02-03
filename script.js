@@ -1,63 +1,67 @@
-//FIrst example
-let text =
-  '{"employees":[' +
-  '{"firstName":"Jigar","lastName":"Kalariya" },' +
-  '{"firstName":"Prashant","lastName":"Patel" },' +
-  '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+// Use of append
+// const body = document.body
+// body.append('hello World', " Bye")
 
-const obj = JSON.parse(text);
-document.getElementById("demo").innerHTML =
-  obj.employees[0].lastName + " " + obj.employees[0].firstName;
-//Second Example
-const meJson = `
-{
-    "name": "Jigar",
-    "age":20,
-    "graduated":true,
-    "favouritecolor":[
-        "Skyblue",
-        "NeavyBlue"
-    ]
-}`;
-const me = JSON.parse(meJson);
-console.log(me);
-console.log(me.name);
-console.log(me.age);
-console.log(me.graduated);
-console.log(me.favouritecolor);
-//Third Example using JSON.stringify
-const car = {
-    make: "Honda",
-    model: "Civik"
-};
-const cars = JSON.stringify(car);
-console.log(cars);
-//parse a JSON object
-console.log('parse a JSON object Belowed :')
+// Create element
+// const body = document.body
+// const div = document.createElement('div') 
+// div.innerText = "Hello World"
+// div.textContent = "Hello World2"
+// body.append(div)
 
-let jsonData = `{ 
-  "name": "Jigar Kalariya",
-  "age": 20,
-  "hobbies": [ "reading", "traveling", "swimming" ],
-  "address": { "city": "Ahmedabad",
-               "state": "Gujarat" }}`;
+// Modifying Element In HTML
+// const div = document.querySelector('div')
+// console.log(div.textContent)
+// console.log(div.innerText)
 
-let user = JSON.parse(jsonData);
+// modify the html content with using innerHTML
+// const body = document.body
+// const div = document.createElement("div")
+// div.innerHTML = "<strong>Hello World 2</strong>"
+// const strong = document.createElement('strong')
+// strong.innerText = "Hello World 3"
+// div.append(strong)
+// body.append(div)
 
-console.log("Name: " + user.name);
-console.log("Age: " + user.age);
-console.log("Hobbies: " + user.hobbies);
-console.log("Address: " + user.address.city + ", " + user.address.state);
-//here's an example of how you can convert a JavaScript object to a JSON string
-console.log('example of how you can convert a JavaScript object to a JSON string')
-let detail = {
-  name: "jigar",
-  age: 20,
-  hobbies: ["reading", "traveling", "sweeming"],
-  address: {
-    city:"Ahmedabad",
-    state:"Gujarat"
-  }
-};
-let object = JSON.stringify(detail);
-console.log(object);
+// Remove the element
+// const body = document.body
+// const div = document.querySelector("div")
+// const spanHi = document.querySelector("#hi")
+// const spanBye = document.querySelector("#bye")
+// spanBye.remove()
+// div.append(spanBye)
+// div.removeChild(spanHi) you can use this also to remove element
+
+// to set attribute and remove the attribute
+// const body = document.body
+// const div = document.querySelector("div")
+// const spanHi = document.querySelector("#hi")
+// const spanBye = document.querySelector("#bye")
+// console.log(spanHi.getAttribute("title"))
+// console.log(spanHi.id)
+// console.log(spanHi.setAttribute('id', 'hi1'))
+// console.log(spanHi.setAttribute('title', 'hello1'))
+// spanHi.removeAttribute('id')
+// spanHi.removeAttribute('title')
+
+// Custome DataAttributes
+// const body = document.body
+// const div = document.querySelector("div")
+// const spanHi = document.querySelector("#hi")
+// const spanBye = document.querySelector("#bye")
+// console.log(spanHi.dataset)
+// console.log(spanHi.dataset.longerName)
+// console.log(spanHi.dataset.test)
+// spanBye.dataset.newName = "Bye span tag"
+
+const body = document.body
+const div = document.querySelector("div")
+const spanHi = document.querySelector("#hi")
+const spanBye = document.querySelector("#bye")
+spanBye.classList.add('new-class')
+spanHi.classList.remove('h1')
+spanHi.classList.toggle('h3',true)
+
+spanHi.style.backgroundColor = "red"
+spanHi.style.color = "white"
+spanBye.style.color = "red"
