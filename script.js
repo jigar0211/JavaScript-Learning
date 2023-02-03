@@ -1,63 +1,73 @@
-//FIrst example
-let text =
-  '{"employees":[' +
-  '{"firstName":"Jigar","lastName":"Kalariya" },' +
-  '{"firstName":"Prashant","lastName":"Patel" },' +
-  '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+// const grandparent = document.querySelector(".grandparent");
+// const parent = document.querySelector(".parent");
+// const child = document.querySelector(".child");
 
-const obj = JSON.parse(text);
-document.getElementById("demo").innerHTML =
-  obj.employees[0].lastName + " " + obj.employees[0].firstName;
-//Second Example
-const meJson = `
+// grandparent.addEventListener(
+//   "click",
+//   (e) => {
+//     console.log("Grandparent Capture");
+//   },
+//   { capture: true }
+// );
+// grandparent.addEventListener("click", (e) => {
+//   console.log("Grandparent Bubble");
+// });
+// parent.addEventListener(
+//     "click",
+//     (e) => {
+//         e.stopPropagation();
+//       console.log("parent Capture");
+//     },
+//     { capture: true }
+//   );
+// parent.addEventListener("click", () =>{
+//     console.log("Hi")
+// });
+// setTimeout(() => {
+//   parent.addEventListener("click", (e) => {
+//     console.log("parent Bubble");
+//   });
+// }, 2000);
+// child.addEventListener(
+//     "click",
+//     (e) => {
+//       console.log("child Capture");
+//     },
+//     { capture: true }
+//   );
+// child.addEventListener("click", (e) => {
+//   console.log("child Bubble");
+//   //   e.stopPropagation();
+// });
+
+
+const divs = document.querySelectorAll('div')
+// divs.forEach(div => {
+//     div.addEventListener("click", () => {
+//         console.log('Hi')
+//     })
+// })
+
+// document.addEventListener("click", "div", e => {
+    // if(e.target.matches("div")){
+        // console.log("Hi")
+    // }
+// })
+
+addGlobalEventListener("click", "div", e => {
+    // if(e.target.matches("div")){
+        console.log("Hi")
+    // }
+})
+
+function addGlobalEventListener(type, selector, callback)
 {
-    "name": "Jigar",
-    "age":20,
-    "graduated":true,
-    "favouritecolor":[
-        "Skyblue",
-        "NeavyBlue"
-    ]
-}`;
-const me = JSON.parse(meJson);
-console.log(me);
-console.log(me.name);
-console.log(me.age);
-console.log(me.graduated);
-console.log(me.favouritecolor);
-//Third Example using JSON.stringify
-const car = {
-    make: "Honda",
-    model: "Civik"
-};
-const cars = JSON.stringify(car);
-console.log(cars);
-//parse a JSON object
-console.log('parse a JSON object Belowed :')
-
-let jsonData = `{ 
-  "name": "Jigar Kalariya",
-  "age": 20,
-  "hobbies": [ "reading", "traveling", "swimming" ],
-  "address": { "city": "Ahmedabad",
-               "state": "Gujarat" }}`;
-
-let user = JSON.parse(jsonData);
-
-console.log("Name: " + user.name);
-console.log("Age: " + user.age);
-console.log("Hobbies: " + user.hobbies);
-console.log("Address: " + user.address.city + ", " + user.address.state);
-//here's an example of how you can convert a JavaScript object to a JSON string
-console.log('example of how you can convert a JavaScript object to a JSON string')
-let detail = {
-  name: "jigar",
-  age: 20,
-  hobbies: ["reading", "traveling", "sweeming"],
-  address: {
-    city:"Ahmedabad",
-    state:"Gujarat"
-  }
-};
-let object = JSON.stringify(detail);
-console.log(object);
+    document.addEventListener(type, e => {
+        if(e.target.matches(selector)) callback(e)
+    })
+}
+const newDiv = document.createElement("div") //new div
+newDiv.style.width = "200px"
+newDiv.style.height = "200px"
+newDiv.style.backgroundColor = "purple"
+document.body.append(newDiv)
