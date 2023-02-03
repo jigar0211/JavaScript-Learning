@@ -1,72 +1,67 @@
-//print sum of 100 numbers
-let b = 100;
-let sum = 0;
-for (let a= 0 ; a <= b; a++)
-{
-    sum = sum + a;
-    console.log(sum);
-}
-//check prime number
-const number = parseInt(prompt("Enter a positive number"));
-let isprime = true;
+// Use of append
+// const body = document.body
+// body.append('hello World', " Bye")
 
-if ( number === 1 ){
-    alert("1 is neither prime nor composite number");
-}
-else if(number > 1)
-{
-    for (let i = 2; i < number; i++){
-        if(number % i == 0)
-        {
-            isprime = false;
-            break;
-        }
-    }
-    if(isprime)
-    {
-        alert(`${number} is a prime number`);
-    }else {
-        alert(`${number} is not a prime number`);
-    }
-}
-//while loop 
-console.log("while");
-var j = 17;
-while(j<=20)
-{
-    console.log(j);
-    j++;
-}
+// Create element
+// const body = document.body
+// const div = document.createElement('div') 
+// div.innerText = "Hello World"
+// div.textContent = "Hello World2"
+// body.append(div)
 
-//do while loop
-console.log("Do While");
-var k=21;  
-do{  
-console.log(k);  
-k++;  
-}while (k<=30);  
+// Modifying Element In HTML
+// const div = document.querySelector('div')
+// console.log(div.textContent)
+// console.log(div.innerText)
 
-//while loo example
-var num = 1;
-do{
-    num += 1
-    if(num % 2 == 0)
-    {
-        console.log(num);
-    }
-}while(num<=50)
-//For-In Loop 
-const numbers = [45, 4, 9, 16, 25];
-let txt = "";
-numbers.forEach(myFunction);
-document.getElementById("demo").innerHTML = txt;
-function myFunction(value) {
-  txt += value + "<br>"; 
-}
-//For-Of Loop
-let language = "javascript"
-let text = ""
-for (let i of language){
-    text += i + "<br>"
-}
-document.getElementById("demo1").innerHTML = text;
+// modify the html content with using innerHTML
+// const body = document.body
+// const div = document.createElement("div")
+// div.innerHTML = "<strong>Hello World 2</strong>"
+// const strong = document.createElement('strong')
+// strong.innerText = "Hello World 3"
+// div.append(strong)
+// body.append(div)
+
+// Remove the element
+// const body = document.body
+// const div = document.querySelector("div")
+// const spanHi = document.querySelector("#hi")
+// const spanBye = document.querySelector("#bye")
+// spanBye.remove()
+// div.append(spanBye)
+// div.removeChild(spanHi) you can use this also to remove element
+
+// to set attribute and remove the attribute
+// const body = document.body
+// const div = document.querySelector("div")
+// const spanHi = document.querySelector("#hi")
+// const spanBye = document.querySelector("#bye")
+// console.log(spanHi.getAttribute("title"))
+// console.log(spanHi.id)
+// console.log(spanHi.setAttribute('id', 'hi1'))
+// console.log(spanHi.setAttribute('title', 'hello1'))
+// spanHi.removeAttribute('id')
+// spanHi.removeAttribute('title')
+
+// Custome DataAttributes
+// const body = document.body
+// const div = document.querySelector("div")
+// const spanHi = document.querySelector("#hi")
+// const spanBye = document.querySelector("#bye")
+// console.log(spanHi.dataset)
+// console.log(spanHi.dataset.longerName)
+// console.log(spanHi.dataset.test)
+// spanBye.dataset.newName = "Bye span tag"
+
+const body = document.body
+const div = document.querySelector("div")
+const spanHi = document.querySelector("#hi")
+const spanBye = document.querySelector("#bye")
+spanBye.classList.add('new-class')
+spanHi.classList.remove('h1')
+spanHi.classList.toggle('h3',true)
+
+spanHi.style.backgroundColor = "red"
+spanHi.style.color = "white"
+spanBye.style.color = "red"
