@@ -7,56 +7,82 @@
     <title>javascript</title>
 </head>
 <body>
-    <h2>local Scope</h2>
-    <p id="demo1"></p>
-    <p id="demo2"></p>
-    <h3>code</h3>
+    <h2>JSON Example</h2>
+    <p id="demo"></p>
+    <h3>code:</h3>
     <pre>
-        //Local Scope 
-        function localscope(a, b)
-        {
-            let result = a+b; // Local Scope Variable
-            document.getElementById("demo1").innerHTML = result;
-        }
-        localscope(5,5)
-        let result = 555; // Globle Scope variable
-        document.getElementById("demo2").innerHTML = result;
+        let text = '{"employees":[' +
+        '{"firstName":"Jigar","lastName":"Kalariya" },' +
+        '{"firstName":"Prashant","lastName":"Patel" },' +
+        '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+
+        const obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = 
+        obj.employees[0].lastName+" "+
+        obj.employees[0].firstName;
     </pre>
-
-    <h2>Globle Scope</h2>
-    <p id="demo3"></p>
-    <p id="demo4"></p>
-    <h3>code</h3>
+    <h2>JSON Example 2</h2>
+    <h3>code:</h3>
     <pre>
-        //Globle scope
-        let message = "Hello World!"; // Globle Variable
-        function globlescop()
+        //Second Example
+        const meJson = `
         {
-            let message = "Good Morning";
-        }
-        document.getElementById("demo3") = message; // This call Globle variable
-
-        globlescop();
-
-        document.getElementById("demo4") = message; // This call Globle variable    
+            "name": "Jigar",
+            "age":20,
+            "graduated":true,
+            "favouritecolor":[
+                "Skyblue",
+                "NeavyBlue"
+            ]
+        }`;
+        const me = JSON.parse(meJson);
+        console.log(me);
+        console.log(me.name);
+        console.log(me.age);
+        console.log(me.graduated);
+        console.log(me.favouritecolor);
     </pre>
-    <h2>Block Scope</h2>
-    <p id="demo5"></p>
-    <p id="demo6"></p>
-    <h3>code</h3>
+    <h2>JSON Example 3 using stringify</h2>
+    <h3>code:</h3>
     <pre>
-        //block scope
-        const addnumber = (n1,n2) =>{
-        let res = n1+n2;
-        document.getElementById("demo5").innerHTML = res;
-        if(res != 9)
-        {
-            let res1 = "positive"; // this is block scope variable you can use it one time in function if you use it uot side the function then it show an error that Variable is Undefine.
-            document.getElementById("demo6").innerHTML = res1;
-        }
-        document.getElementById("demo6").innerHTML = res1;
-        } 
-        addnumber(5,5);
+        const car = {
+            make: "Honda",
+            model: "Civik"
+        };
+        const cars = JSON.<u>stringify</u>(car);
+        console.log(cars);
+    </pre>
+    <h2>parse a JSON object</h2>
+    <h3>code:</h3>
+    <pre>
+        let jsonData = `{ 
+        "name": "Jigar Kalariya",
+        "age": 20,
+        "hobbies": [ "reading", "traveling", "swimming" ],
+        "address": { "city": "Ahmedabad",
+                    "state": "Gujarat" }}`;
+
+        let user = JSON.parse(jsonData);
+
+        console.log("Name: " + user.name);
+        console.log("Age: " + user.age);
+        console.log("Hobbies: " + user.hobbies);
+        console.log("Address: " + user.address.city + ", " + user.address.state);
+    </pre>
+    <h2>an example of how you can convert a JavaScript object to a JSON string</h2>
+    <h3>code:</h3>
+    <pre>
+        let detail = {
+            name: "jigar",
+            age: 20,
+            hobbies: ["reading", "traveling", "sweeming"],
+            address: {
+              city:"Ahmedabad",
+              state:"Gujarat"
+            }
+          };
+          let object = JSON.stringify(detail);
+          console.log(object);
     </pre>
     <script src="script.js"></script>
 </body>

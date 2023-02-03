@@ -1,33 +1,63 @@
-//Local Scope 
-function localscope(a, b)
+//FIrst example
+let text =
+  '{"employees":[' +
+  '{"firstName":"Jigar","lastName":"Kalariya" },' +
+  '{"firstName":"Prashant","lastName":"Patel" },' +
+  '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+
+const obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+  obj.employees[0].lastName + " " + obj.employees[0].firstName;
+//Second Example
+const meJson = `
 {
-    let result = a+b; // Local Scope Variable
-    document.getElementById("demo1").innerHTML = result;
-}
-localscope(5,5)
-let result = 555; // Globle Scope variable
-document.getElementById("demo2").innerHTML = result;
+    "name": "Jigar",
+    "age":20,
+    "graduated":true,
+    "favouritecolor":[
+        "Skyblue",
+        "NeavyBlue"
+    ]
+}`;
+const me = JSON.parse(meJson);
+console.log(me);
+console.log(me.name);
+console.log(me.age);
+console.log(me.graduated);
+console.log(me.favouritecolor);
+//Third Example using JSON.stringify
+const car = {
+    make: "Honda",
+    model: "Civik"
+};
+const cars = JSON.stringify(car);
+console.log(cars);
+//parse a JSON object
+console.log('parse a JSON object Belowed :')
 
-//Globle scope
-let message = "Hello World!"; // Globle Variable
-function globlescop()
-{
-    message = "Good Morning";
-}
-document.getElementById("demo3").innerHTML = message; // This call Globle variable
-globlescop();
-document.getElementById("demo4").innerHTML = message; // This call function variable
+let jsonData = `{ 
+  "name": "Jigar Kalariya",
+  "age": 20,
+  "hobbies": [ "reading", "traveling", "swimming" ],
+  "address": { "city": "Ahmedabad",
+               "state": "Gujarat" }}`;
 
-//block scope
-const addnumber = (n1,n2) =>{
-    let res = n1+n2;
-    document.getElementById("demo5").innerHTML = res;
+let user = JSON.parse(jsonData);
 
-    if(res != 9)
-    {
-        let res1 = "positive"; // this is block scope variable you can use it one time in function if you use it uot side the function then it show an error that Variable is Undefine.
-        document.getElementById("demo6").innerHTML = res1;
-    }
-    document.getElementById("demo6").innerHTML = res1;
-} 
-addnumber(5,5);
+console.log("Name: " + user.name);
+console.log("Age: " + user.age);
+console.log("Hobbies: " + user.hobbies);
+console.log("Address: " + user.address.city + ", " + user.address.state);
+//here's an example of how you can convert a JavaScript object to a JSON string
+console.log('example of how you can convert a JavaScript object to a JSON string')
+let detail = {
+  name: "jigar",
+  age: 20,
+  hobbies: ["reading", "traveling", "sweeming"],
+  address: {
+    city:"Ahmedabad",
+    state:"Gujarat"
+  }
+};
+let object = JSON.stringify(detail);
+console.log(object);
