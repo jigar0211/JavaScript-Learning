@@ -1,55 +1,72 @@
-// object creation
-const intro = { 
-    /*KEY->*/name: 'KALARIYA JIGAR',
-    age: 20/*<-VALUE*/ 
-};
-console.log(typeof intro); // show object type
-console.log(intro.name);
-console.log(intro["age"]); //Using bracket Notation
+//print sum of 100 numbers
+let b = 100;
+let sum = 0;
+for (let a= 0 ; a <= b; a++)
+{
+    sum = sum + a;
+    console.log(sum);
+}
+//check prime number
+const number = parseInt(prompt("Enter a positive number"));
+let isprime = true;
 
-//nested objects
-const student = {
-    name:"jigar",
-    age:20,
-    marks: {
-        maths:70,
-        science:80,
+if ( number === 1 ){
+    alert("1 is neither prime nor composite number");
+}
+else if(number > 1)
+{
+    for (let i = 2; i < number; i++){
+        if(number % i == 0)
+        {
+            isprime = false;
+            break;
+        }
+    }
+    if(isprime)
+    {
+        alert(`${number} is a prime number`);
+    }else {
+        alert(`${number} is not a prime number`);
     }
 }
-console.log(student.marks);
-console.log("marks in Science")
-console.log(student.marks.science);
+//while loop 
+console.log("while");
+var j = 17;
+while(j<=20)
+{
+    console.log(j);
+    j++;
+}
 
-//call function in object
-const demo ={
-    name:"jigar",
-    greet: function(){
-        console.log('hello')
+//do while loop
+console.log("Do While");
+var k=21;  
+do{  
+console.log(k);  
+k++;  
+}while (k<=30);  
+
+//while loo example
+var num = 1;
+do{
+    num += 1
+    if(num % 2 == 0)
+    {
+        console.log(num);
     }
-}  
-demo.greet();
-
-//Arrays
-console.log("Arrays Srarts from here")
-//empty array
-const list = [];
-console.log(list);
-//Array of numbers
-const numberarr = [1,2,3,4,5,6,7,8,9,0];
-console.log(numberarr);
-console.log(numberarr[2]) // access elements
-console.log(numberarr[5]) // access elements
-//Array of String
-const arrstring = ["jigar","kalariya"];
-console.log(arrstring);
-//mixes type array
-const newdata = ["jiagr",20,true];
-newdata.push('kalariya'); // add element on array
-newdata.unshift('hello'); // add element at the beginning of the array
-newdata[2] = "cahnged"; // To change element of array
-//newdata.pop(); // to remove last element
-//newdata.shift(); // to remove first element
-console.log(newdata);
-console.log(newdata.length); // Shoes the length};
-let object = JSON.stringify(detail);
-console.log(object);
+}while(num<=50)
+//For-In Loop 
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+function myFunction(value) {
+  txt += value + "<br>"; 
+}
+//For-Of Loop
+let language = "javascript"
+let text = ""
+for (let i of language){
+    text += i + "<br>"
+}
+document.getElementById("demo1").innerHTML = text;
