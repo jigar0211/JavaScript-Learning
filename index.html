@@ -7,68 +7,39 @@
     <title>javascript</title>
 </head>
 <body>
-    <h2>Promise with then and catch</h2>
-    <h3>code:</h3>
+    <h2>addition demo</h2>
+    <p id="demo"></p>
+    <h3>code</h3>
     <pre>
-        // let p = new Promise((resolve, reject) =>{
-            //     let a = 1 + 1; //if condition is not true then it will print catch message
-            //     if(a == 2){
-            //         resolve('Success')
-            //     } else{
-            //         reject('Failed')
-            //     }
-            // })
-            // p.then((message) => {
-            //     console.log('This is in the then ' + message)
-            // }).catch((message) =>{
-            //     console.log('This is in the then ' + message)
-            // })
+        //addition number with closer
+        function addnumber(firstnumber,secondnumber)
+        {
+            var resultValue = "Result is : "
+            function add()
+            {
+                return resultValue + (firstnumber+secondnumber);
+            }
+            return add;
+        }
+        var myfunction = addnumber(20,80);
+        var result = myfunction();
+        document.getElementById("demo").innerHTML = result;
     </pre>
-    <h2>Promise Example</h2>
-    <h3>code:</h3>
+
+    <h2>Click count function using closer</h2>
+    <input type="button" value="Click Me.!@" onclick="alert(incrementclickcount())" >
+    <p id="demo1"></p>
+    <h3>code</h3>
     <pre>
-        // const userleft = false 
-        // const userwatch = true
-        // function watchtutorialpromise(){
-        //     return new Promise((resolve, reject) => {
-        //         if (userleft){
-        //             reject({
-        //                 name: 'User Left',
-        //                 message: ':('
-        //             })
-        //     }else if(userwatch){
-        //         reject({
-        //             name:'User Watching Videos',
-        //             message: ''
-        //         })
-        //     }else{
-        //         resolve('Thumbs up')
-        //     }
-        // })
-        // }
-    </pre>
-    <h2>Promise simple Example for call all the promise</h2>
-    <h3>code:</h3>
-    <pre>
-        const promiseOne = new Promise((resolve, reject) => {
-            resolve('Promise One Record')
-        })
-        
-        const promiseTwo = new Promise((resolve, reject) =>{
-            resolve('Promise Two Record')
-        })
-        
-        const promiseThree = new Promise((resolve, reject) =>{
-            resolve('Promise Three Record')
-        })
-        
-        Promise.all([
-            promiseOne,
-            promiseTwo,
-            promiseThree
-        ]).then((message) => {
-            console.log(message)
-        })
+        //Click Counter
+        var incrementclickcount = (function()
+        {
+            var counter = 0;
+            return function()
+            {
+                return ++counter;
+            }
+        })();
     </pre>
     <script src="script.js"></script>
 </body> 
