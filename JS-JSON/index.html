@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <h2>JSON Example</h2>
+    <p id="demo"></p>
+    <h3>code:</h3>
+    <pre>
+        let text = '{"employees":[' +
+        '{"firstName":"Jigar","lastName":"Kalariya" },' +
+        '{"firstName":"Prashant","lastName":"Patel" },' +
+        '{"firstName":"Vipul","lastName":"Chandravadiya" }]}';
+
+        const obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = 
+        obj.employees[0].lastName+" "+
+        obj.employees[0].firstName;
+    </pre>
+    <h2>JSON Example 2</h2>
+    <h3>code:</h3>
+    <pre>
+        //Second Example
+        const meJson = `
+        {
+            "name": "Jigar",
+            "age":20,
+            "graduated":true,
+            "favouritecolor":[
+                "Skyblue",
+                "NeavyBlue"
+            ]
+        }`;
+        const me = JSON.parse(meJson);
+        console.log(me);
+        console.log(me.name);
+        console.log(me.age);
+        console.log(me.graduated);
+        console.log(me.favouritecolor);
+    </pre>
+    <h2>JSON Example 3 using stringify</h2>
+    <h3>code:</h3>
+    <pre>
+        const car = {
+            make: "Honda",
+            model: "Civik"
+        };
+        const cars = JSON.<u>stringify</u>(car);
+        console.log(cars);
+    </pre>
+    <h2>parse a JSON object</h2>
+    <h3>code:</h3>
+    <pre>
+        let jsonData = `{ 
+        "name": "Jigar Kalariya",
+        "age": 20,
+        "hobbies": [ "reading", "traveling", "swimming" ],
+        "address": { "city": "Ahmedabad",
+                    "state": "Gujarat" }}`;
+
+        let user = JSON.parse(jsonData);
+
+        console.log("Name: " + user.name);
+        console.log("Age: " + user.age);
+        console.log("Hobbies: " + user.hobbies);
+        console.log("Address: " + user.address.city + ", " + user.address.state);
+    </pre>
+    <h2>an example of how you can convert a JavaScript object to a JSON string</h2>
+    <h3>code:</h3>
+    <pre>
+        let detail = {
+            name: "jigar",
+            age: 20,
+            hobbies: ["reading", "traveling", "sweeming"],
+            address: {
+              city:"Ahmedabad",
+              state:"Gujarat"
+            }
+          };
+          let object = JSON.stringify(detail);
+          console.log(object);
+    </pre>
+    <script src="script.js"></script>
+</body>
+</html>
