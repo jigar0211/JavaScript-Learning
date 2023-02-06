@@ -63,3 +63,4 @@ function person2() {
 let x = new person2();
 x.sayName();
 console.log('Hello')
+console.log('goodmorning')
