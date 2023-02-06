@@ -1,39 +1,60 @@
-function arithmetic(a, b, op) {
-  var str1 = a + op + b;
-  return eval(str1);
+console.log('Pass By Value Example :')
+//Pass By Value Example
+function passbyvalue(a, b){
+    let tmp;
+    tmp = b;
+    b = a;
+    a = tmp;
+    console.log(`Inside Pass By value 
+    Function -> a = ${a} b = ${b}`);
 }
-document.getElementById("demo1").innerHTML = arithmetic(8, 2, "+");
-document.getElementById("demo2").innerHTML = arithmetic(8, 2, "-");
-document.getElementById("demo3").innerHTML = arithmetic(8, 2, "*");
-document.getElementById("demo4").innerHTML = arithmetic(8, 2, "/");
-
-//simple Calculation
-alert("Do addition of two numbers");
-let number1 = parseFloat(prompt("Enter first number: "));
-let number2 = parseFloat(prompt("Enter second number: "));
-let result = calculator(number1, number2);
-
-function calculator(number1, number2) {
-  return number1 + number2;
+let a = 1;
+let b = 2;
+console.log(`Before calling Pass by Value 
+Function -> a = ${a} b = ${b}`);
+passbyvalue(a, b);
+console.log(`After calling Pass by Value 
+Function -> a = ${a} b = ${b}`);
+//Pass By Reference Example
+console.log('Pass By refreance Example :')
+function passbyrefrence(obj){
+    let tmp = obj.a;
+    obj.a = obj.b;
+    obj.b = tmp;
+    console.log(`Inside Pass By Refrence
+    FUnction -> a = ${obj.a} b = ${obj.b}`);
 }
-
-alert("The Ans Is " + result);
-
-//onclick event function
-function sayHello() {
-  document.write("Hello There");
+let obj = {
+    a:10,
+    b:20
 }
-//Arrow Function
-function person() {
-  this.name = "jigar";
-  this.age = 20;
-  this.subfunction = function () {
-    let innerfunc = () => {
-      document.getElementById("demo5").innerHTML = this.name;
-      document.getElementById("demo6").innerHTML = this.age;
-    };
-    innerfunc();
-  };
-}
+functions/script.js
 const j = new person();
 j.subfunction();
+//Arrow function
+let sample = () => console.log("Good Morning");
+sample();
+//dynamic arrow function
+let age = 20;
+let wellcome = (age < 20) ? () =>
+    console.log("Baby") : 
+    () => console.log("Adult");
+wellcome();
+//this with arrow function
+function person2() {
+    this.name = "jigar",
+    this.age = 20,
+    this.sayName = function () {
+      console.log(this.age);
+      function innerFunc() {
+        //this refer Global Objects
+        console.log(this.age);
+        console.log(this);
+      }
+      innerFunc();
+    };
+}
+let x = new person2();
+x.sayName();
+console.log('Hello')
+console.log('goodmorning')
