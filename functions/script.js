@@ -28,8 +28,6 @@ let obj = {
     a:10,
     b:20
 }
-const j = new person();
-j.subfunction();
 //Arrow function
 let sample = () => console.log("Good Morning");
 sample();
