@@ -16,7 +16,7 @@ passbyvalue(a, b);
 console.log(`After calling Pass by Value 
 Function -> a = ${a} b = ${b}`);
 //Pass By Reference Example
-console.log('Call By refreance Example :')
+console.log('Pass By refreance Example :')
 function passbyrefrence(obj){
     let tmp = obj.a;
     obj.a = obj.b;
