@@ -28,33 +28,8 @@ let obj = {
     a:10,
     b:20
 }
-functions/script.js
-const j = new person();
-j.subfunction();
-//Arrow function
-let sample = () => console.log("Good Morning");
-sample();
-//dynamic arrow function
-let age = 20;
-let wellcome = (age < 20) ? () =>
-    console.log("Baby") : 
-    () => console.log("Adult");
-wellcome();
-//this with arrow function
-function person2() {
-    this.name = "jigar",
-    this.age = 20,
-    this.sayName = function () {
-      console.log(this.age);
-      function innerFunc() {
-        //this refer Global Objects
-        console.log(this.age);
-        console.log(this);
-      }
-      innerFunc();
-    };
-}
-let x = new person2();
-x.sayName();
-console.log('Hello')
-console.log('goodmorning')
+console.log(`Before calling Pass by Value 
+Function -> a = ${obj.a} b = ${obj.b}`);
+passbyrefrence(obj)
+console.log(`After calling Pass by Value 
+Function -> a = ${obj.a} b = ${obj.b}`);
