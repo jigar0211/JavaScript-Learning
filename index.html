@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>javascript</title>
-</head>
-<body>
-
-    <div>
-        <span title="hello" id="hi" class="h1 h2" data-test="this is a test" data-longer-name="this is a longer name">Hello</span>
-        <span id="bye">Bye</span>
-    </div>
+  </head>
+  <body>
+    <h2>Pass By Value Example</h2>
+    <h3>Code:</h3>
+    <pre>
+        function passbyvalue(a, b){
+            let tmp;
+            tmp = b;
+            b = a;
+            a = tmp;
+            console.log(`Inside Pass By value 
+            Function -> a = ${a} b = ${b}`);
+        }
+        let a = 1;
+        let b = 2;
+        console.log(`Before calling Pass by Value 
+        Function -> a = ${a} b = ${b}`);
+        passbyvalue(a, b);
+        console.log(`After calling Pass by Value 
+        Function -> a = ${a} b = ${b}`);
+    </pre>
+    <h2>Pass By Reference Example</h2>
+    <h3>Code:</h3>
+    <pre>
+        console.log('Call By refreance Example :')
+        function passbyrefrence(obj){
+            let tmp = obj.a;
+            obj.a = obj.b;
+            obj.b = tmp;
+            console.log(`Inside Pass By Refrence
+            FUnction -> a = ${obj.a} b = ${obj.b}`);
+        }
+        let obj = {
+            a:10,
+            b:20
+        }
+        console.log(`Before calling Pass by Value 
+        Function -> a = ${obj.a} b = ${obj.b}`);
+        passbyrefrence(obj)
+        console.log(`After calling Pass by Value 
+        Function -> a = ${obj.a} b = ${obj.b}`);
+    </pre>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
