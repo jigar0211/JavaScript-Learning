@@ -4,61 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Javascript</title>
+    <title>javascript</title>
   </head>
   <body>
-    <p>Arithmetic operations using function</p>
-    <pre></pre>
-    <p id="demo1"></p>
-    <p id="demo2"></p>
-    <p id="demo3"></p>
-    <p id="demo4"></p>
-    <h3>Code</h3>
+    <h2>Pass By Value Example</h2>
+    <h3>Code:</h3>
     <pre>
-        function arithmetic(a, b, op)
-        {
-            var str1 = a + op + b;
-            return eval(str1);
+        function passbyvalue(a, b){
+            let tmp;
+            tmp = b;
+            b = a;
+            a = tmp;
+            console.log(`Inside Pass By value 
+            Function -> a = ${a} b = ${b}`);
         }
-        document.getElementById("demo1").innerHTML = arithmetic(8, 2, "+");
-        document.getElementById("demo2").innerHTML = arithmetic(8, 2, "-");
-        document.getElementById("demo3").innerHTML = arithmetic(8, 2, "*");
-        document.getElementById("demo4").innerHTML = arithmetic(8, 2, "/");
+        let a = 1;
+        let b = 2;
+        console.log(`Before calling Pass by Value 
+        Function -> a = ${a} b = ${b}`);
+        passbyvalue(a, b);
+        console.log(`After calling Pass by Value 
+        Function -> a = ${a} b = ${b}`);
     </pre>
-
-    <p>Click the following button to call the function</p>
-    <form>
-      <input type="button" onclick="sayHello()" value="Say Hello" />
-    </form>
-    <h3>Code</h3>
+    <h2>Pass By Reference Example</h2>
+    <h3>Code:</h3>
     <pre>
-        function sayHello()
-        {
-            document.write("Hello There")
+        console.log('Call By refreance Example :')
+        function passbyrefrence(obj){
+            let tmp = obj.a;
+            obj.a = obj.b;
+            obj.b = tmp;
+            console.log(`Inside Pass By Refrence
+            FUnction -> a = ${obj.a} b = ${obj.b}`);
         }
-    </pre>
-    <p>Arrow Function</p>
-    <p id="demo5"></p>
-    <p id="demo6"></p>
-    <h3>Code</h3>
-    <pre>
-        function sayHello() {
-            document.write("Hello There");
-          }
-          //Arrow Function
-          function person() {
-            this.name = "jigar";
-            this.age = 20;
-            this.subfunction = function () {
-               let innerfunc = () => {
-               document.getElementById("demo5").innerHTML = this.name;
-               document.getElementById("demo6").innerHTML = this.age;
-            };
-            innerfunc();
-          };
+        let obj = {
+            a:10,
+            b:20
         }
-        const j = new person();
-        j.subfunction();          
+        console.log(`Before calling Pass by Value 
+        Function -> a = ${obj.a} b = ${obj.b}`);
+        passbyrefrence(obj)
+        console.log(`After calling Pass by Value 
+        Function -> a = ${obj.a} b = ${obj.b}`);
     </pre>
     <script src="script.js"></script>
   </body>
