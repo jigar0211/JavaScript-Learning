@@ -28,7 +28,6 @@ let obj = {
     a:10,
     b:20
 }
-functions/script.js
 const j = new person();
 j.subfunction();
 //Arrow function
