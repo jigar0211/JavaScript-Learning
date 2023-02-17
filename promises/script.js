@@ -95,4 +95,4 @@ const pro3 = new Promise((resolve, reject) => {
 Promise.all([pro1, pro2, pro3]).then((values) => {
   console.log(values);
 });
-// Expected output: Array [3, 42, "foo"] 
+// Expected output: Array [3, 42, "foo"]
